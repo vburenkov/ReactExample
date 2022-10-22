@@ -1,15 +1,18 @@
 ﻿import React, { Component } from 'react';
 
-export class FetchGraph extends Component {
+export class FetchGraph extends Component
+{
     static displayName = FetchGraph.name;
 
-    constructor(props) {
+    constructor(props)
+    {
         super(props);
-        this.state = { forecasts: [], loading: true };
+        this.state = { graphData: [], loading: true };
     }
 
-    componentDidMount() {
-        this.populateWeatherData();
+    componentDidMount()
+    {
+        this.populateGraphData();
     }
 
     static renderForecastsTable(forecasts) {
@@ -22,22 +25,23 @@ export class FetchGraph extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        forecasts.map(forecast =>
-                            <tr>
-                                <td>{forecast.x}</td>
-                                <td>{forecast.y}</td>
-                            </tr>
-                        )}
+                {
+                    forecasts.map(forecast =>
+                        <tr>
+                            <td>{forecast.x}</td>
+                            <td>{forecast.y}</td>
+                        </tr>
+                )}
                 </tbody>
             </table>
         );
     }
 
-    render() {
+    render()
+    {
         let contents = this.state.loading
             ? <p><em>Loading...</em></p>
-            : FetchGraph.renderForecastsTable(this.state.forecasts);
+            : FetchGraph.renderForecastsTable(this.state.graphData);
 
         return (
             <div>
@@ -48,9 +52,9 @@ export class FetchGraph extends Component {
         );
     }
 
-    async populateWeatherData() {
+    async populateGraphData() {
         const response = await fetch("graphpoint");
         const data = await response.json();
-        this.setState({ forecasts: data, loading: false });
+        this.setState({ graphData: data, loading: false });
     }
 }
