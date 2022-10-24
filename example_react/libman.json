@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [{
+  "library": "victory@36.6.8",
+  "destination": "lib/victory/"
+}
+]
+}

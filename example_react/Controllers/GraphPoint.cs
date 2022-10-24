@@ -1,4 +1,4 @@
-﻿namespace example_react
+﻿namespace example_react.Controllers
 {
     public class GraphPoint
     {
