@@ -3,3 +3,5 @@
 *.sqlite
 .vs/ReactExample/v17/.suo
 .vs/example_react/config/applicationhost.config
+*.v2
+*.v1

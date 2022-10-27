@@ -23,11 +23,9 @@ namespace example_react.Controllers
         [HttpGet]
         public IEnumerable<GraphPoint> Get()
         {
-            var startDate = new DateTime(2020, 9, 21, 14, 0, 0);
-
-            var temp = Enumerable.Range(-50, 100).Select(index => new GraphPoint
+            var temp = Enumerable.Range(-50, 50).Select(index => new GraphPoint
             {
-                X =startDate + index*TimeSpan.FromMinutes(15),
+                X = index,
                 Y = GetRandomInt(-50 ,50),
             })
             .ToArray();
