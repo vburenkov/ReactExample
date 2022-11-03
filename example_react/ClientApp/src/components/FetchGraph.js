@@ -82,18 +82,11 @@ export class FetchGraph extends Component {
         );
     }
 
-<<<<<<< HEAD
     async populateGraphData()
     {
         const response = await fetch("graphpoint");
         const data = await response.json();
         var filteredData = data.slice(0, 5);
         this.setState({ graphData: filteredData, loading: false });
-=======
-    async populateWeatherData() {
-        const response = await fetch("graphpoint");
-        const data = await response.json();
-        this.setState({ forecasts: data, loading: false });
->>>>>>> parent of c7c4f6c (add working version)
     }
 }
